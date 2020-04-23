@@ -1,0 +1,8 @@
+<h1>Welcome to Yelp!</h1>
+<p><%= "We found #{Restaurant.count} restaurants nearby." %></p>
+<p><%= link_to "Add a new restaurant", new_restaurant_path %></p>
+<br>
+<% @restaurants.each do |restaurant| %>
+  <h4><%= link_to restaurant.name, restaurant_path(restaurant)%></h4>
+  <p><%= restaurant.category.upcase %> - <%= restaurant.address %></p>
+<% end %>
